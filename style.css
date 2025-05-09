@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../desafio010/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root {         /*Variável*/
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after { /*Adiciona depois, nesse caso adiciona depois da classe - adiciona um emoji*/
+    content: '\1F517';
+}
+
+header {
+    background-image: linear-gradient(to top, var(--cor5), var(--cor3));
+    color: white;
+    /*padding: 15px; - Como eu fiz para deixar o cabeçalho maior, de baixo como foi feito no curso*/
+    min-height: 150px;
+
+   padding-top: 40px;
+    
+   
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    text-align: center;
+    font-weight: normal;
+    font-size: 3em;
+    margin-bottom: 20px;
+    
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.534);
+}
+
+header > p {
+    text-align: center;
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 1.2em;
+    padding-right: 10px;
+    padding-left: 10px;
+    max-width: 600px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.534);
+}
+
+nav {
+    background-color: var(--cor5);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.493);
+}
+
+nav > a {
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: left;
+    font-weight: bold;
+   
+    transition-duration: 0.5s; 
+    /*Tempo de transição do menu, aqui funciona no carregar a página e no hover tbm se for direto
+    no hover funciona apenas o passar o mouse */
+}
+
+nav > a:hover {
+    background-color: var(--cor3);
+    color: var(--cor5);
+    text-decoration: underline;
+
+    
+    
+}
+
+article {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.568);
+
+    padding: 20px;
+    min-width: 150px;
+    max-width: 800px;
+    margin: auto;
+    
+
+    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 20px;
+}
+
+
+main p { /*Deixando sem o > siginifica que pode estar em qualquer nivel*/
+    margin: 15px 0;
+    text-align: justify;
+    text-indent: 7px;
+    font-size: 1em; /*Tamanho das lentras - aparentimente o 1em é o normal*/
+    line-height: 1em; /*Altura entre linhas*/
+}
+
+main strong { /*Tudo que for <strong>*/
+    color: var(--cor4);
+    font-weight: bold;
+    
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+main h1 {
+    font-family: var(--fonte-android);
+    color: var(--cor5);
+    margin-top: auto;
+    font-weight: normal;
+    font-size: 1.8em;
+    
+}
+
+main  h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.4em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+}
+
+aside{
+    background-color:  rgb(214, 240, 155);
+    padding: 10px;
+
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px black;  
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0\00A0'; /*Coloca o emoji - barra invertida - o 00A0 é os espaço*/
+    list-style-position: inside; /*Posição da lista*/
+    columns: 2; /*Número de colunas*/
+}
+
+
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 15px;
+    margin: -12px -12px 0px -12px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+img {
+    width: 100%;
+}  
+
+.pequena {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+div.video > iframe {
+    position: absolute;
+    /*Transforma em elemnto filho do relative, fazendo com que as propriedades auxiliares se movimentem em relação ao elemento mãe*/
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px;
+    padding: 20px;
+    padding-bottom: 50%;
+    position: relative; /*posiciona o elemento em relação à sua posição "normal"*/
+}
+
+ /*         Como eu fiz para configurar o video
+iframe {
+    display: block;
+    max-width: 80%;
+    margin: auto;
+}
+*/
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
